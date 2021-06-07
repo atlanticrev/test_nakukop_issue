@@ -10,7 +10,7 @@ type ProductCatalogProps = {
 
 export default function Catalog({ catalogData, cartData }: ProductCatalogProps) {
     return (
-        <>
+        <div className="catalog-container">
             {
                 catalogData.map(groupData =>
                     groupData.products.length
@@ -21,6 +21,14 @@ export default function Catalog({ catalogData, cartData }: ProductCatalogProps) 
                         : null
                 )
             }
-        </>
+
+            <style jsx>{`
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+            `}</style>
+        </div>
     );
 }
